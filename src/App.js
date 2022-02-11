@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header>
         <h1>Hello World! </h1>
-        <p>This is my first ever AWS deployment. Hurrayy!!</p>
+        <p>This is my first AWS deployment. Hurrayy!!</p>
         <h1> Authentication is working, if you are seeing this message.</h1>
       </header>
       <AmplifySignOut />
