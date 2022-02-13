@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import '../App.css';
 import { API, Storage } from 'aws-amplify';
 import { listNotes } from '../graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from '../graphql/mutations';
+import { Heading } from '@aws-amplify/ui-react';
+import { Button } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+//Components
+import NotesCard from './NotesCard';
 
 const initialFormState = { name: '', description: '' }
 
@@ -52,8 +59,8 @@ function Api() {
   }
 
   return (
-    <div >
-      <h1>My Notes App</h1>
+    <div className="center" >
+      <h1>Add Notes</h1>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value })}
         placeholder="Note name"
@@ -68,20 +75,21 @@ function Api() {
         type="file"
         onChange={onChange}
       />
-      <button onClick={createNote}>Create Note</button>
+      <Button onClick={createNote}>Create Note</Button>
       <div style={{ marginBottom: 30 }}>
-        {
+        {/* {
           notes.map(note => (
             <div key={note.id || note.name}>
               <h2>{note.name}</h2>
               <p>{note.description}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
+              <Button onClick={() => deleteNote(note)}>Delete note</Button>
               {
                 note.image && <img src={note.image} alt="myImage" style={{ width: 400, height: 400, margin: '60px' }} />
               }
             </div>
           ))
-        }
+        } */}
+        <NotesCard notes={notes} deleteNote={deleteNote} />
       </div>
     </div>
   );
