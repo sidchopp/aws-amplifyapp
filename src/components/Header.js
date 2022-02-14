@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className="center">
       <Heading style={{ margin: "50px" }} level={3}>
-        My first ever AWS App. Hurrayy!!!
+        Authentication & Authorization
       </Heading>
       <Flex style={{ margin: "50px" }} direction="column">
         <Divider />
