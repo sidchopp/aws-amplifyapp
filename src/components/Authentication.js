@@ -5,7 +5,7 @@ import '@aws-amplify/ui-react/styles.css';
 import '../App.css'
 
 //Components
-import Api from './Api';
+// import Api from './Api';
 
 // For Authentication UI
 const components = {
@@ -45,7 +45,7 @@ function Authentication() {
             Hello {' '}{user.username}
           </Heading>
           <Button size="small" onClick={signOut}>Sign out</Button>
-          <Api />
+          {/* <Api /> */}
         </main>
       )}
     </Authenticator>
